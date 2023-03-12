@@ -47,6 +47,15 @@ class ChirpController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function showAllFromUser(Request $request)
+    {
+        $chirps = $request->user()->chirps()->get();
+        return response()->json($chirps);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Chirp $chirp)
