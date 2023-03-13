@@ -15,7 +15,11 @@ class ChirpController extends Controller
      */
     public function index(): Response
     {
-        return inertia('Chirps/Index');
+        return inertia('Chirps/Index', [
+            // TODO Add pagination
+            // The `with` method does eager loading
+            'chirps' => Chirp::with('user:id,name')->latest()->get(),
+        ]);
     }
 
     /**
