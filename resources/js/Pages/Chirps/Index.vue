@@ -5,6 +5,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { useForm, Head } from "@inertiajs/vue3";
 import Chirp from '@/Components/Chirp.vue';
 
+// TODO make it work with TypeScript (<script setup lang="ts">)
 defineProps(['chirps']);
 
 const form = useForm({
