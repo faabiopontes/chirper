@@ -32,7 +32,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('chirps', ChirpController::class)
-        ->only(['index', 'store', 'update'])
+        ->only(['index', 'store', 'update', 'destroy'])
         ->middleware(['auth', 'verified']);
 
     Route::get('chirps/all', [ChirpController::class, 'showAllFromUser'])
