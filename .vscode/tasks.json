@@ -4,15 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Serve",
+            "label": "Sail Up",
             "type": "shell",
-            "command": "php artisan serve",
-            "group": "build"
+            "command": "./vendor/bin/sail up",
         },
         {
-            "label": "Dev",
+            "label": "Sail Run Dev",
             "type": "shell",
-            "command": "npm run dev"
+            "command": "./vendor/bin/sail npm run dev",
+            "dependsOn": ["Sail Up"]
         },
         {
             "label": "Build",
@@ -20,7 +20,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": ["Serve", "Dev"]
+            "dependsOn": ["Sail Up", "Run Dev"]
         }
     ]
 }
