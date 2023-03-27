@@ -12,7 +12,6 @@
             "label": "Sail Run Dev",
             "type": "shell",
             "command": "./vendor/bin/sail npm run dev",
-            "dependsOn": ["Sail Up"]
         },
         {
             "label": "Build",
@@ -20,7 +19,17 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": ["Sail Up", "Run Dev"]
+            "dependsOn": ["Sail Up", "Sail Run Dev"]
+        },
+        {
+            "label": "Sail Tinker",
+            "type": "shell",
+            "command": "./vendor/bin/sail tinker",
+        },
+        {
+            "label": "Sail Route List",
+            "type": "shell",
+            "command": "./vendor/bin/sail artisan route:list",
         }
     ]
 }
