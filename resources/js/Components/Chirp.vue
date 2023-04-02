@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { useForm } from "@inertiajs/vue3";
@@ -7,10 +7,13 @@ import Dropdown from "@/Components/Dropdown.vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputError from "@/Components/InputError.vue";
+import type { Chirp } from "@/types";
 
 dayjs.extend(relativeTime);
 
-const props = defineProps(["chirp"]);
+const props = defineProps<{
+    chirp: Chirp
+}>();
 
 const form = useForm({
     message: props.chirp.message,
