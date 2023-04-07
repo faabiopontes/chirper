@@ -1,12 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import InputError from "@/Components/InputError.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import { useForm, Head } from "@inertiajs/vue3";
 import Chirp from '@/Components/Chirp.vue';
+import { Chirp as TChirp } from '@/types';
 
-// TODO make it work with TypeScript (<script setup lang="ts">)
-defineProps(['chirps']);
+defineProps<{
+    chirps: TChirp[]
+}>();
 
 const form = useForm({
     message: "",
