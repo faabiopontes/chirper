@@ -56,6 +56,7 @@ class ChirpController extends Controller
     public function showAllFromUser(Request $request)
     {
         $chirps = $request->user()->chirps()->get();
+
         return response()->json($chirps);
     }
 
